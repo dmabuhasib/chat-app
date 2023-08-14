@@ -1,0 +1,21 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build":"cd chat-app-backend && npm install && cd ../chat-app-frontend && npm install && npm run build",
+    "start": "node chat-app-backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmabuhasib/chat-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmabuhasib/chat-app/issues"
+  },
+  "homepage": "https://github.com/dmabuhasib/chat-app#readme"
+}

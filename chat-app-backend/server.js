@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path')
 const connectDB = require('./connection');
 const UserRoutes = require('./routes/UserRoutes')
 const User = require('./models/User');
@@ -86,11 +87,12 @@ io.on('connection', (socket) => {
 });
 
 
-app.get("/", (req,res) => {
-    res.send('<h1>This is Backend Server</h1>')
+const _dirname = path.resolve()
+app.use(express.static(path.join(_dirname, '/chat-app-frontend/build')))
+app.get('*', (req, res) => res.sendFile(path.join(_dirname, '/chat-app-frontend/build/index.html')))
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
 });
-
-
 
 server.listen(PORT, async () => {
     console.log(`server is running at http://localhost:${PORT}`);
