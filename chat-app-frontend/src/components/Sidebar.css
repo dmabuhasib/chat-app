@@ -1,0 +1,23 @@
+.member-status-img{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.member-status{
+    margin-bottom: 0;
+    position: relative;
+}
+.sidebar-online-status{
+    color: rgb(5, 192, 61)
+}
+.sidebar-offline-status{
+    color: yellow;
+}
+.sidebar-online-status,.sidebar-offline-status{
+    position: absolute;
+    font-size: 16px;
+    z-index: 99;
+    left: 12px;
+    bottom: 0;
+}
